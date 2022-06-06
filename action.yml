@@ -1,4 +1,4 @@
-name: 'Lighthouse CI Action'
+name: 'Lighthouse CI Action (with extraHeaders)'
 description: 'Audit URLs using Lighthouse and test performance with Lighthouse CI'
 inputs:
   urls:
