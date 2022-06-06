@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v9
+        uses: thearc-hq/lighthouse-ci-action@v9
         with:
           urls: |
             https://example.com/
@@ -42,6 +42,7 @@ jobs:
           budgetPath: ./budget.json # test performance budgets
           uploadArtifacts: true # save results as an action artifacts
           temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          extraHeaders: "X-Lighthouse-CI-Action: true" # add custom header to the request, comma-separated list
 ```
 
 Describe your performance budget using a [`budget.json`](https://web.dev/use-lighthouse-for-performance-budgets/).
