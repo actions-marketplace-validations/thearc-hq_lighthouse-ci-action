@@ -32,6 +32,8 @@ async function main() {
     for (const url of input.urls) {
       collectArgs.push(`--url=${url}`)
     }
+  } else if (input.startServerCommand) {
+    collectArgs.push(`--startServerCommand=${input.startServerCommand}`)
   }
   // else LHCI will panic with a non-zero exit code...
 
