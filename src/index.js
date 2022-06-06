@@ -90,10 +90,14 @@ async function main() {
       }
 
       if (input.extraHeaders) {
-        const headers = input.extraHeaders.split(",").map(h => h.trim()).filter(h => h).map(h => ({key: h.split(":")[0], value: h.split(":").slice(1).join(":").trim()}));
-        headers.forEach(header => {
+        const headers = input.extraHeaders
+          .split(',')
+          .map((h) => h.trim())
+          .filter((h) => h)
+          .map((h) => ({ key: h.split(':')[0], value: h.split(':').slice(1).join(':').trim() }))
+        headers.forEach((header) => {
           uploadParams.push(`--extraHeaders.${header.key}=${header.value}`)
-        });
+        })
       }
 
       if (input.configPath) uploadParams.push(`--config=${input.configPath}`)
